@@ -7,13 +7,15 @@ class UsersController < ActionController::Base
   end
 
   def add_user
-    #render template: #show the user lookup here
-    3
+    User.create(username: params[:new_user])
+    redicect_path = "/users/" + params[:new_user]
+    redirect_to redicect_path
   end
 
   def user_profile
     @username = params[:username]
     @the_user = User.where(username: @username)[0]
+    @user_photos = @the_user.own_photos
 
     render template: "user_templates/profile"
   end
