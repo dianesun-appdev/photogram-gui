@@ -8,8 +8,8 @@ class UsersController < ActionController::Base
 
   def add_user
     User.create(username: params[:new_user])
-    redicect_path = "/users/" + params[:new_user]
-    redirect_to redicect_path
+    redirect_path = "/users/" + params[:new_user]
+    redirect_to redirect_path
   end
 
   def user_profile
@@ -21,6 +21,11 @@ class UsersController < ActionController::Base
   end
 
   def update_username
-    3
+    old_username = params[:old_user]
+    old_user_record = User.find_by(username: old_username)
+    old_user_record.update(username: params[:input_username])
+
+    redirect_path = "/users/" + params[:input_username]
+    redirect_to redirect_path
   end
 end
