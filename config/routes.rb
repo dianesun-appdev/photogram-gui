@@ -1,8 +1,9 @@
 Rails.application.routes.draw do
   get "/", controller: "users", action: "index"
+  get "/users", controller: "users", action: "index"
   get "/add_user", controller: "users", action: "add_user"
-  #get "/users", controller: "users", action: "index"
-  #get "/users/:username", controller: "users", action: "profile"
+  get "/users/:username", controller: "users", action: "user_profile"
+  get "/update_user/", controller: "users", action: "update_username"
 
   #get "/photos", controller: "photos", action: "index"
 end

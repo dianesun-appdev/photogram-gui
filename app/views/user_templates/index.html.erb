@@ -5,3 +5,22 @@
   <input id="user_id" name="new_user" placeholder="Enter a username...">
   <button>Add user</button>
 </form>
+
+<hr>
+
+<table border="1"> 
+    <tr>
+      <th>ID</th>
+      <th>Username</th>
+      <th></th>
+    </tr>
+  <tbody>
+    <% @all_users.each do |a_user| %>
+    <tr> 
+    <td><%= a_user.id %></td>
+    <td><%= a_user.username %></td>
+    <td><a href = "/users/<%=a_user.username%>"> Show details </a> </td>
+    <% end %>
+    </tr>
+  </tbody>
+</table>
