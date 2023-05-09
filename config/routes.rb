@@ -7,4 +7,5 @@ Rails.application.routes.draw do
 
   get "/photos", controller: "photo", action: "index"
   get "/photos/:photo_id", controller: "photo", action: "view_details"
+  get "/insert_photo_record", controller: "photo", action: "post_photo"
 end
