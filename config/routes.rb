@@ -5,5 +5,6 @@ Rails.application.routes.draw do
   get "/users/:username", controller: "users", action: "user_profile"
   get "/update_user/:old_user", controller: "users", action: "update_username"
 
-  #get "/photos", controller: "photos", action: "index"
+  get "/photos", controller: "photo", action: "index"
+  get "/photos/:photo_id", controller: "photo", action: "view_details"
 end
